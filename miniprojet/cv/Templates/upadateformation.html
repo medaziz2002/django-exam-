@@ -1,0 +1,50 @@
+{% load static %}
+<html>
+
+<head>
+    <title>Modifier un formation</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+</head>
+
+<body>
+    {% include "navbar.html" %}
+    <h1>
+        <center>Modifier un formation</center>
+    </h1>
+    <form action="update_formation_action/{{formation.id}}" method="post">
+        {% csrf_token %}
+        <div class="col-sm-4 col-md-6 col-lg-4">
+            <label>Intitule</label>
+            <input name="intitule" class="form-control" value="{{formation.intitule}}"></td>
+        </div>
+        <div class="col-sm-4 col-md-6 col-lg-4">
+            <label>Date</label>
+            <input  name="date"  value="{{formation.date |date:"j/M/Y"}}"class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-6 col-lg-4">
+            <label>Lieux</label>
+            <input name="lieu" class="form-control" value="{{formation.lieu}}"></td>
+        </div>
+       
+        <div class="col-sm-4 col-md-6 col-lg-4">
+            <label>Type</label>
+            <select name="s" class="form-control form-control-lg">
+                
+                {% for t in type %}
+                {% if formation.type_id == t.id %}
+                <option value="{{ t.id }}" selected>{{t.nomType}}</option>
+                {%else%}
+                <option value="{{ t.id }}" >{{t.nomType}}</option>
+                 {%endif%}
+                {% endfor %}
+                
+            </select>
+        </div>
+        <div class="col-sm-4 col-md-6 col-lg-4">
+            <br><input type="submit" value="Modifier" class="btn btn-success">
+        </div>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+{% load static %}
+<html>
+
+<head>
+    <title>Modification d'un type</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}">
+</head>
+
+<body>
+    {% include "navbar.html" %}
+    <h1>
+        <center>Modifier un Type</center>
+    </h1>
+    <form action="update_typ_action/{{ type.id }}" method="post">
+        {% csrf_token %}
+        <div class="col-sm-4 col-md-6 col-lg-4">
+            <label>nomType</label>
+
+            <input name="nomType" value="{{type.nomType}}" class="form-control"></td>
+
+        </div>
+        <div class="col-sm-4 col-md-6 col-lg-4">
+            <label>Description</label>
+            <input name="description" value="{{type.description}}" class="form-control"></td>
+        </div>
+    
+        <div class="col-sm-4 col-md-6 col-lg-4">
+            <br><input type="submit" value="Modifier" class="btn btn-success">
+        </div>
+    </form>
+</body>
+
+</html>

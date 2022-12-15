@@ -1,0 +1,90 @@
+{% load static %}
+<html>
+<head>
+    <title>Infos générales</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, user-scalable=no">
+          <link rel="stylesheet" href="{% static 'css/cv.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+</head>
+<body>
+    {% include "navbar.html" %}
+    <header>
+        
+    </header>
+    
+    <section>
+        <div class="photo">
+           <img src="{% static 'img/aziz.jpg' %}" alt="Ma photo de profil"> 
+        </div>
+        <div class="prez">
+            <h2>Qui suis-je ?</h2>
+           <p>Actuellement étudiant en 2éme année licence en technologie de l'information (TI) spécialité Développement des systèmes d'information.
+            Passionnée par les domaines de web et data science , je suis ouvert à toute opportunité dans ce domaine.</p>
+        </div>
+        <div class="contact">
+            <h2>Informations de contact</h2>
+            <div class="contact-flex">
+                <p>Nom : </p>
+                <p>{{prenom}} {{nom}}</p>
+            </div>
+            <div class="contact-flex">
+                <p>Adresse : </p>
+                <p>{{adresse}}</p>
+            </div>
+            <div class="contact-flex">
+                <p>Téléphone :</p>
+                <p>{{telephone}}</p>
+            </div>
+            <div class="contact-flex">
+                <p>Mail : </p>
+                <p><a href="mailto:azizhassine673@gmail.com">azizhassine673@gmail.com</a></p>
+            </div>
+            <div class="contact-flex">
+                <p>Permis :</p>
+                <p>B</p>
+            </div>
+            <div class="social">
+                <a href=""><img src="https://www.pierre-giraud.com/wp-content/uploads/2019/07/fb.png" alt="Logo Fb"></a>
+                
+                <a href=""><img src="https://www.pierre-giraud.com/wp-content/uploads/2019/07/lk.png" alt="Logo Lk"></a>
+        
+            </div>
+        </div>
+    </section>
+    <section>
+        <h2>Centres d'intérêt</h2>
+        
+        <figure class="interet">
+            <img src="https://www.pierre-giraud.com/wp-content/uploads/2019/07/cuisine.jpg" alt="Cuisine">
+            <figcaption>Cuisine</figcaption>
+        </figure>
+        <figure class="interet">
+            <img src="https://www.pierre-giraud.com/wp-content/uploads/2019/07/gaming.jpg" alt="Gaming">
+            <figcaption>Jeux vidéos</figcaption>
+        </figure>
+        <figure class="interet">
+            <img src="https://www.pierre-giraud.com/wp-content/uploads/2019/07/livre.jpg" alt="Littérature">
+            <figcaption>Littérature</figcaption>
+        </figure>
+    </section>
+    <section>
+        <h2>Vie associative</h2>
+        <figure class="interet">
+            <img src="{% static 'img/images.jfif' %}" alt="bénévolat">
+            <figcaption>bénévolat</figcaption>
+        </figure>
+        <figure class="interet">
+            <img src="{% static 'img/images (1).jfif' %}" alt="La journée de nettoyage">
+            <figcaption>La journée de nettoyage</figcaption>
+        </figure>
+        
+    </section>
+    <footer>
+        <p>©Belhadj hassine Mohamed aziz</a> 2022</p>
+        
+        
+    </footer>
+</body>
+    </html>
